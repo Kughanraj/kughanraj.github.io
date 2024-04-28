@@ -46,3 +46,22 @@
 .left-menu a:hover svg {
   fill: #0a0; /* Darker green color for SVG icons on hover */
 }
+
+@media (max-width: 768px) {
+  .left-menu {
+    position: static; /* Remove sticky position */
+    height: auto; /* Reset height */
+    width: 100%; /* Take full width */
+    padding: 0; /* Remove padding */
+    font-size: 4vw; /* Adjust font size */
+  }
+
+  .left-menu a {
+    padding: 3%; /* Adjust padding */
+    border-radius: 0; /* Remove border radius */
+  }
+
+  .left-menu svg {
+    margin-right: 3%; /* Adjust spacing between icon and text */
+  }
+}

@@ -1,0 +1,78 @@
+/* Contact Section Styles */
+.contact {
+  background-color: #333; /* Dark background color */
+  color: #00ff00; /* Light text color */
+  padding: 1vw;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+  margin-right: 100px;
+}
+
+.contact h2 {
+  color: #00ff00; /* Light text color */
+}
+
+.contact hr {
+  border-top: 0.4px solid #00ff00; /* Light border color */
+  margin-bottom: 1vw;
+}
+
+.contact p {
+  color: #666; /* Medium text color */
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contact p:hover {
+  color: #fff; /* Change text color to white on hover */
+}
+
+.contact form {
+  margin-top: 20px;
+}
+
+.contact form input[type="text"] {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #00ff00; /* Light border color */
+  border-radius: 5px;
+  background-color: #444; /* Dark background color for input fields */
+  color: #00ff00; /* Light text color */
+}
+
+.contact form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #00ff00; /* Light background color */
+  color: #333; /* Dark text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add animation to background color */
+}
+
+.contact form input[type="submit"]:hover {
+  background-color: #007700; /* Darker background color on hover */
+}
+
+.contact .offer-sentence {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 25px;
+  color: #ff0000; /* Red text color */
+  font-family: Arial, sans-serif; /* Change font family */
+  animation: colorChange 3s infinite alternate; /* Apply animation */
+}
+
+/* Animation Keyframes */
+@keyframes colorChange {
+  0% {
+    color: #ff0000; /* Start with red color */
+  }
+  50% {
+    color: #ffffff; /* Change to white color halfway */
+  }
+  100% {
+    color: #ff0000; /* Return to red color */
+  }
+}

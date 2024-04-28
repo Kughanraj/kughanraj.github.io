@@ -1,0 +1,253 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*grid*/
+.main-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 12.5% 75% 12.5%; /* Adjust column widths as needed */
+  grid-template-areas:
+    "header header header"
+    "left-menu content right-menu"
+    "footer footer footer";
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #222;
+  grid-area: header;
+  color: #fff;
+  padding: 1vw;
+  text-align: center;
+  position: fixed; /* Fixed position for the header */
+  top: 0; /* Fixed to the top of the viewport */
+  left: 0; /* Fixed to the left of the viewport */
+  max-width: 100%; /* Take up full width */
+  /*z-index: 100; /* Ensure header stays above other content */
+}
+
+.content {
+  grid-area: content;
+  padding: 1vw;
+  /* margin-left: 3vw; */
+}
+
+.right-menu {
+  grid-area: right-menu;
+  background-color: #000000;
+  padding: 0%;
+  top: 0; /* Adjust the top position as needed */
+  height: 100%;
+  z-index: 999; /* Ensure menu stays below header */
+  transition: top 0.2s ease; /* Add smooth transition for menu position */
+  padding-top: 4.2%;
+  font-size: 1vw;
+  right: 0;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #000;
+  color: #fff;
+  padding: 2vw;
+  background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhuYnl1NTNncnVqeHdmOW1qZ3N3ajZ2ZWxybHNqaWZrNml0MGE4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cfiid6I8YDKqrCxAaY/giphy.gif);
+  background-size: 3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+  max-width: 100%;
+  position: relative;
+}
+/*end grid*/
+
+/*Header styles*/
+.header {
+  background-color: #000; /* Dark background color */
+  color: #0f0; /* Bright green text color */
+  text-align: center;
+  padding: 2.1%;
+  position: relative; /* Position the header relatively */
+}
+
+.header h1 {
+  font-size: 2vw;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+  position: absolute; /* Position the text absolutely */
+  top: 50%; /* Position at 50% from the top */
+  left: 50%; /* Position at 50% from the left */
+  transform: translate(-50%, -50%); /* Center the text */
+  animation: flicker 0.1s infinite; /* Apply flicker animation */
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/*end of header*/
+
+/* Set black background */
+body {
+  background-color: #2a2a2a;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+  color: #0f0; /* Bright green text color */
+}
+
+/*Home section*/
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+}
+
+.home h1 {
+  font-size: 2vw;
+  margin-bottom: 2%;
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflow text */
+  animation: typing 4s steps(40) forwards; /* Text animation */
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.home button {
+  padding: 0.5vw 1vw;
+  background-color: #0f0;
+  color: #000;
+  border: #000;
+  border-radius: 2vw;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.home button:hover {
+  background-color: #090;
+}
+/*end of home section*/
+
+/* Achievement Section Styles */
+.achievement {
+  background-color: s#333; /* Dark background color */
+  color: #00ff00; /* Light text color */
+  border-radius: 0%;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+}
+
+.achievement h2 {
+  color: #00ff00; /* Light text color */
+  margin-bottom: 0%;
+  overflow: hidden; /* Hide overflow text */
+  white-space: nowrap; /* Prevent line breaks */
+  font-family: "Arial", sans-serif;
+}
+
+.achievement p {
+  font-size: 0.8vw;
+  text-align: justify;
+  font-family: "Verdana", sans-serif;
+}
+
+.achievement p1 {
+  font-family: Arial, sans-serif; /* Apply font style */
+  font-size: 1vw;
+}
+
+.achievement ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: small;
+  display: flex; /* Display list items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+.achievement li {
+  flex-basis: calc(45% - 1vw); /* Adjust width for three columns with spacing */
+  background-color: #333; /* Dark background color for each square */
+  padding: 1vw;
+  border-radius: 2.2vw;
+  margin-bottom: 1.4vw;
+  position: relative; /* Position relative to contain the absolute pseudo-elements */
+}
+
+.achievement li:before,
+.achievement li:after {
+  content: ""; /* Remove bullet point */
+  position: absolute; /* Position absolutely within the list item */
+  top: 0; /* Align to the top of the list item */
+  bottom: 0; /* Align to the bottom of the list item */
+  width: 0.2vw; /* Set width for the border */
+  transition: height 2s ease; /* Add smooth transition for height */
+  border-radius: 2vw;
+}
+
+.achievement li:before {
+  left: 0; /* Align to the left of the list item */
+  background-color: transparent; /* Set initial border color */
+  animation: border-flow 2.5s ease infinite alternate; /* Apply animation to flow the border */
+}
+
+.achievement li:after {
+  right: 0; /* Align to the right of the list item */
+  background-color: transparent; /* Set initial border color */
+  animation: border-flow 2.5s ease infinite alternate; /* Apply animation to flow the border */
+}
+
+@keyframes border-flow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.achievement li:hover {
+  transform: translateY(-5) scale(1.05); /* Move item up slightly and scale on hover */
+  font-weight: bold; /* Make text bold on hover */
+  box-shadow: 0 10vw 10vw rgba(0, 255, 0, 0.5); /* Add a green shadow with downward flow on hover */
+  transition: box-shadow 2.5s ease; /* Slow down green shadow transition */
+}
+
+.achievement li:hover:before,
+.achievement li:hover:after {
+  background-color: #00ff00; /* Change border color on hover */
+}
+
+.achievement li:first-child {
+  margin-top: 0; /* Remove top margin for the first item */
+}
+
+.achievement hr {
+  border-top: 0.4vw solid #00ff00; /* Light border color */
+  margin-bottom: 1vw;
+}
+/* End Achievement Section Styles */
+
+.foot-term {
+  font-family: "Courier New", Courier, monospace;
+  text-align: right;
+  z-index: 1000;
+  width: 100%;
+  position: relative;
+}

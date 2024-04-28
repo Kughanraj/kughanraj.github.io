@@ -1,0 +1,48 @@
+/* Hacker-Style Styles */
+.left-menu {
+  grid-area: left-menu;
+  background-color: #000; /* Dark background color */
+  padding: 1%;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  overflow-y: auto; /* Add scrollbar if the menu content overflows */
+  z-index: 999; /* Ensure menu stays below header */
+  transition: top 0.2s ease; /* Add smooth transition for menu position */
+  position: sticky;
+  font-size: 1vw;
+  width: auto;
+  top: 0;
+}
+
+.left-menu a {
+  display: block;
+  padding: 5%;
+  text-decoration: none;
+  color: #00ff00; /* Light green text color */
+  background-color: #222; /* Dark background color */
+  border-radius: 5%;
+  transition: background-color 0.3s ease;
+}
+
+.left-menu a:hover {
+  background-color: #333; /* Darker background color on hover */
+}
+
+.left-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-menu li {
+  margin-bottom: 6%;
+}
+
+.left-menu svg {
+  fill: #0f0; /* Bright green color for SVG icons */
+  margin-right: 7%;
+  vertical-align: middle;
+}
+
+.left-menu a:hover svg {
+  fill: #0a0; /* Darker green color for SVG icons on hover */
+}

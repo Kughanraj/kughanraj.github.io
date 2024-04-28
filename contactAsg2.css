@@ -2,10 +2,10 @@
 .contact {
   background-color: #333; /* Dark background color */
   color: #00ff00; /* Light text color */
-  padding: 1vw;
-  border-radius: 5px;
+  padding: 2vw; /* Changed padding to 2vw */
+  border-radius: 1vw; /* Changed border-radius to 1vw */
   font-family: "Courier New", Courier, monospace; /* Hacker-style font */
-  margin-right: 100px;
+  margin-right: 1vw; /* Changed margin-right to 5vw */
 }
 
 .contact h2 {
@@ -13,14 +13,20 @@
 }
 
 .contact hr {
-  border-top: 0.4px solid #00ff00; /* Light border color */
-  margin-bottom: 1vw;
+  border-top: 0.1vw solid #00ff00; /* Changed border-top width to 0.1vw */
+  margin-bottom: 2vw;
 }
 
 .contact p {
   color: #666; /* Medium text color */
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 1vw; /* Changed margin-bottom to 1vw */
+  font-size: 1.6vw; /* Changed font-size to 1.2vw */
+}
+
+@media (max-width: 768px){
+  .contact p {
+    font-size: 3vw; /* Changed font-size to 1.2vw */
+  }
 }
 
 .contact p:hover {
@@ -28,25 +34,25 @@
 }
 
 .contact form {
-  margin-top: 20px;
+  margin-top: 2vw; /* Changed margin-top to 2vw */
 }
 
 .contact form input[type="text"] {
-  width: 40%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #00ff00; /* Light border color */
-  border-radius: 5px;
+  width: 50%; /* Changed width to 50% */
+  padding: 1vw; /* Changed padding to 1vw */
+  margin-bottom: 1vw; /* Changed margin-bottom to 1vw */
+  border: 0.1vw solid #00ff00; /* Changed border width to 0.1vw */
+  border-radius: 0.5vw; /* Changed border-radius to 0.5vw */
   background-color: #444; /* Dark background color for input fields */
   color: #00ff00; /* Light text color */
 }
 
 .contact form input[type="submit"] {
-  padding: 10px 20px;
+  padding: 1vw 2vw; /* Changed padding to 1vw 2vw */
   background-color: #00ff00; /* Light background color */
   color: #333; /* Dark text color */
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5vw; /* Changed border-radius to 0.5vw */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Add animation to background color */
 }
@@ -56,9 +62,9 @@
 }
 
 .contact .offer-sentence {
-  margin-top: 20px;
+  margin-top: 2vw; /* Changed margin-top to 2vw */
   font-style: italic;
-  font-size: 25px;
+  font-size: 1.2vw; /* Changed font-size to 1.2vw */
   color: #ff0000; /* Red text color */
   font-family: Arial, sans-serif; /* Change font family */
   animation: colorChange 3s infinite alternate; /* Apply animation */

@@ -8,25 +8,48 @@
 .main-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 12.5% 75% 12.5%; /* Adjust column widths as needed */
+  grid-template-columns: 12.5% 75% 12.5%;
   grid-template-areas:
-    "header header header"
+    "header header right-menu"
     "left-menu content right-menu"
     "footer footer footer";
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .main-wrapper {
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "left-menu"
+      "content"
+      "right-menu"
+      "footer";
+  }
+
+  .header h1 {
+    font-size: 5vw; /* Adjust font size for smaller screens */
+  }
+
+  .footer {
+    background-size: 6vw; /* Adjust background image size */
+  }
+
+  .content {
+    padding: 3vw; /* Adjust padding */
+  }
+}
+
 .header {
-  background-color: #222;
   grid-area: header;
+  background-color: #222;
   color: #fff;
   padding: 1vw;
   text-align: center;
-  position: fixed; /* Fixed position for the header */
-  top: 0; /* Fixed to the top of the viewport */
-  left: 0; /* Fixed to the left of the viewport */
-  max-width: 100%; /* Take up full width */
-  /*z-index: 100; /* Ensure header stays above other content */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure header stays above other content */
 }
 
 .content {
@@ -35,17 +58,77 @@
   /* margin-left: 3vw; */
 }
 
+/* Right menu styles */
 .right-menu {
   grid-area: right-menu;
-  background-color: #000000;
-  padding: 0%;
-  top: 0; /* Adjust the top position as needed */
-  height: 100%;
+  background-color: #000; /* Dark background color */
+  padding: 1%;
+  font-family: "Courier New", Courier, monospace; /* Hacker-style font */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  overflow-y: auto; /* Add scrollbar if the menu content overflows */
   z-index: 999; /* Ensure menu stays below header */
   transition: top 0.2s ease; /* Add smooth transition for menu position */
-  padding-top: 4.2%;
+  position: sticky;
   font-size: 1vw;
-  right: 0;
+  width: auto;
+  top: 0;
+}
+
+.right-menu a {
+  display: block;
+  padding: 5%;
+  text-decoration: none;
+  color: #00ff00; /* Light green text color */
+  background-color: #222; /* Dark background color */
+  border-radius: 5%;
+  transition: background-color 0.3s ease;
+}
+
+.right-menu a:hover {
+  background-color: #333; /* Darker background color on hover */
+}
+
+.right-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right-menu li {
+  margin-bottom: 6%;
+}
+
+.right-menu svg {
+  fill: #0f0; /* Bright green color for SVG icons */
+  margin-right: 7%;
+  vertical-align: middle;
+}
+
+.right-menu a:hover svg {
+  fill: #0a0; /* Darker green color for SVG icons on hover */
+}
+
+@media (max-width: 768px) {
+  .right-menu {
+    position: static; /* Remove sticky position */
+    height: auto; /* Reset height */
+    width: 100%; /* Take full width */
+    padding: 0; /* Remove padding */
+    font-size: 4vw; /* Adjust font size */
+  }
+
+  .right-menu a {
+    padding: 3%; /* Adjust padding */
+    border-radius: 0; /* Remove border radius */
+  }
+
+  .right-menu svg {
+    margin-right: 3%; /* Adjust spacing between icon and text */
+  }
+}
+
+menu-item {
+  padding: 1.2vw;
+  border-bottom: 0.1vw solid #000;
 }
 
 .footer {
@@ -121,6 +204,12 @@ body {
   animation: typing 4s steps(40) forwards; /* Text animation */
 }
 
+.home h2 {
+  font-size: 1.5vw; /* Adjust the font size as needed */
+  color: white; /* Set the color to white */
+  margin-bottom: 2%; /* Add any additional styling if needed */
+}
+
 @keyframes typing {
   0% {
     width: 0;
@@ -162,14 +251,19 @@ body {
 }
 
 .achievement p {
-  font-size: 0.8vw;
+  font-size: 1vw;
+  color: #666;
   text-align: justify;
   font-family: "Verdana", sans-serif;
 }
 
 .achievement p1 {
   font-family: Arial, sans-serif; /* Apply font style */
-  font-size: 1vw;
+  font-size: 1.5vw;
+}
+
+.achievement p:hover {
+  color: #fff;
 }
 
 .achievement ul {
@@ -250,4 +344,27 @@ body {
   z-index: 1000;
   width: 100%;
   position: relative;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .achievement li {
+    flex-basis: 100%; /* Display one item per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .achievement p {
+    font-size: 2.5vw;
+    text-align: justify;
+    font-family: "Verdana", sans-serif;
+  }
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .achievement p1 {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+    font-family: Arial, sans-serif; /* Apply font style */
+  }
 }

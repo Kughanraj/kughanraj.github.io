@@ -70,6 +70,7 @@ img:hover {
   .text-contain {
     flex: auto; /* Reset flex value */
     width: 100%; /* Take full width */
-    padding: 3vw; /* Add padding */
+        padding: 2vw; /* Add padding */
+    font-size: 3vw;
   }
 }

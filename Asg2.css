@@ -344,6 +344,7 @@ body {
   z-index: 1000;
   width: 100%;
   position: relative;
+  top: 0;
 }
 
 /* Media query for smaller screens */

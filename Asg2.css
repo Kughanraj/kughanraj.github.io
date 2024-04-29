@@ -50,6 +50,10 @@
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensure header stays above other content */
+   background-image: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWhuYnl1NTNncnVqeHdmOW1qZ3N3ajZ2ZWxybHNqaWZrNml0MGE4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cfiid6I8YDKqrCxAaY/giphy.gif);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 3vw;
 }
 
 .content {

@@ -10,6 +10,10 @@
   padding-right: 0%;
 }
 
+.about h1{
+ font-size: 2vw; 
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -63,7 +67,7 @@ img:hover {
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack containers vertically */
+    flex-direction: row; /* Stack containers vertically */
   }
 
   .photo-contain,

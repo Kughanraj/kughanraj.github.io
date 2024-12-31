@@ -1,7 +1,9 @@
 ---
 layout: post
-title: CyberX WSriteup
+title: CyberX Writeup
 date: 2024-12-31 22:53 +0800
+categories: [CTF, Writeup]
+tags: [ctf,writeup,cyberx,cybersentinels]
 ---
 
 # Welcome to my Challenges Writeup for the CyberX CTF.
@@ -109,6 +111,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    First step is changing the zip file into a hash file (cannot skip since John will crack the hash to get the password or something like that 🤓) [Learn more here](https://www.freecodecamp.org/news/crack-passwords-using-john-the-ripper-pentesting-tutorial/)
 
    So in Kali linux, open your folder where you put the zip files, then open your terminal in that folder. Then change the zip file into hash file by entering this command in your terminal. 
+
    ```bash
    zip2john <zipfile name @ zipfile path> > <anyname.txt>
 
@@ -130,7 +133,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
   john --show <anyname.txt>
 
   john --show flag.txt
-  ```   
+  ```  
 
   The passowrd for out zip file is ```rainbow1```.
 
@@ -152,8 +155,8 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
  Take a deep breath and analyze back how John works, he crack/guess the password hash with a list of hash he already has. So how about if we give him a custom word list to crack?? Well that is the intended way to solve this chall, but writing all the character and player name on your own is hard, if you even think of writing it better just test it with the zip file right? So we turn to our best friend, CHATGPT 🐐. We ask him to create a wordlist for us. 
 
- ```txt
- Aatrox
+ ```bash
+Aatrox
 Ahri
 Akali
 Akshan
@@ -337,26 +340,324 @@ Mata
 Keria
 Ming
 
- ```
+```
 
-So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all. So 
+So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all. Now change the zip file to hash and feed john this juicy wordlist and let him do the work. 
+
+![Step1](images/2.1.png)
+
+We could also see that the password is ```tryndamere```. Now just get the flag.
+
+![Step2](images/2.2.png)
+
+FLAG: CyberX{pl4se_d0nt_t3ll_m3_y0u_tri3d_th3m_0n3_by_0n3}
 
 ### 7. Hex1: The Misleading File
+
+Description: A file has appeared in your path, but something about it doesn't feel right. It’s not what it seems, and the details are hiding in plain sight. Your task: uncover its true identity.
+
+Alright this challenge is pretty straight forward, **uncover its true identity** means just change it's extension. If you open this file in [HexEd](https://hexed.it) or any of your favourite Hex Editor, you will notice that everything looks perfect and let's be forreal, this is forensic, I can't be giving exe file for you to RE right??. You still need to open it in hex editor so that you can get the correct extension which is jpg.
+
+Uninteded solution: Exiftool the file to get the flag since I made the challenge in Canva and somehow the first string I entered is saved in the metadata alongside my full name and matric number 💀. That is why you see the flag in all the Hex Challenges since I just reused the same pictures. 
+
+![Step1](images/hex1.jpg)
+
+FLAG: CyberX{34SY_R1GHT}
+
 ### 8. Hex2: The Hidden Code
+
+Description: Files carry secrets, sometimes more than we expect. There’s something in the structure you haven’t quite noticed yet. Look closer, and the truth might reveal itself.
+
+Alright, so we got a jpg file, but cannot open it, and the chall name is Hex, so the only sensible thing to think is that, the magic bytes has been messed up. So load it in [HexEd](https://hexed.it) and observe it's magic bytes.
+
+![Step1](images/hex2,1.png)
+
+So we can see that the magic bytes are messed up but it still has JFIF, which belongs to jpg so, the extension is correct in this file. Now go to [Magic Byte Library](https://en.wikipedia.org/wiki/List_of_file_signatures) and get the jpg magic bytes. ```FF D8 FF E0``` is the mafic byte, now just replace them with the ```AA AA AA AA ``` in the file. 
+
+![Step2](images/HEX2.2.png)
+
+Now save the file and get the flag.
+
+![Step3](images/hex2.jpg)
+
+FLAG: CyberX{3t1ll_34sy}
+
 ### 9.  Hex3: The Deceiver’s Trick
+
+Description: Not everything is as it appears. Some things have been altered—perhaps to mislead you. Follow the trail, and the real nature of this file might emerge if you know where to look.
+
+So we got a docx file huh, what's next? a no extension file?, interesting, well looking at the pattern just insert it into the hex editor and see how it goes. 
+
+![Step1](images/hex3.1.png)
+
+Hmmm so we have ```AA AA AA AA``` again, but if you look close enough, we also have  ```IHDR```  which could mean something. When in confusion, ask CHATGPT 🐐. It told me that this is a png file and in GPT we trust. So change the ```AA AA AA AA``` to png magic byte ```89 50 4E 47``` and change the extension to png and see how it goes. 
+
+![Step2](images/hex3.2.png)
+
+Voila we got the flag.
+
+![Step1](images/hex3.png)
+
+FLAG:CyberX{34s13st_h3x}
+
 ### 10. Hex4: The Final Fix
+
+Description: Things are not always what they seem. Everything about this file seems a bit off—could it be intentional? The pieces are scattered, but only by restoring them will the hidden truth come to light.
+Hint: What you see is not the full story, expand your view. 
+
+Well now it is a file with no extension ha? GG.... Welp let just put it [HexEd](https://hexed.it) and see how it goes.. 
+
+![Step1](images/hex4.1.png)
+
+So it is the same png hile huh? Because of the ```IHDR``` (if it is ```JFIF``` it is then jpg). So let's fix the file and see what happens. Change the ```AA AA AA AA``` to png magic byte ```89 50 4E 47``` and change the extension to png.
+
+![Step2](images/hex4.2.png)
+
+Alright so we got the photo but where is the flag?? It you check the metadata it is the same stupid first flag.... Where is the flag now??. Oh great time for a hint, **not full story, expand your view**, bro who is giving this ass hints... Well nothing can be done, so let's ask 🐐GPT what it thinks. Hmm GPT is giving ass answers so let him rest now and use our brains. There is a slight difference in the picture when compared to the others, somehow it feels *small*. Ohhhhhh so that is what the author meant by expand your view, expand the picture!!! Damn the author is a genius (Self-glaze is crazy bro). 
+
+![Step3](images/hex4.3.png)
+
+Now let surf the internet for any tips, I used resize image in hex editor. Voila found a nice [website explaining this](https://cyberhacktics.com/hiding-information-by-changing-an-images-height/). Sadly he talking about jpg, so we search again and ofc we got the solution from [StackOverflow](https://stackoverflow.com/questions/30550346/understanding-image-its-hex-values). So we play around with the second line..🥸🥸
+
+After a few trial, I did this and got the flag. 
+
+![Step4](images/hex4.4.png)
+
+![Step5](images/hex4.5.png)
+
+FLAG: CyberX{34s13st_h3x}
+
+Truly the easiest hex frr!
 ### 11. ChronoPuzzle
+
+Description: The hacker left behind four identical images, but they don’t look as innocent as they seem. Hidden in their metadata are fragments of a mysterious code. Arrange them in the correct order by deciphering their timestamps.
+flag format = CyberX{string1_string2_string3_string4}
+
+Hmmm 4 cute cat photos named in a order, suspicious.. Well lets try exiftool and see the output. 
+
+![Step1](images/c1.1.png)
+
+Ohh we have a comment in the metadata, so that is the string said in the question huh. Alright let's try the strings accroding to the name then ❌❌❌ ofc it is wrong, it cannot be that simple right?? Lets try analysing the metadata more, since that is what we have been asked in the question. Ohhhhh all the files has a bit similar date/time. Wait, the challenge name is Chrono, chrono means **relating to time**, so that is how we should order the strings huh. So cat->cat4->cat2->cat3!!!
+
+FLAG: CyberX{XJVTQR_PAKZLW_NMTRXF_ZGYCWD}
 ### 12. Apocalypse
+Too lazy to do writeup.....
     
 ## OSINT
 ### 1. Rat in the kitchen 1
+Description: Rats in the kitchen - it seems like mario brother was arrested while he was eating. What was he eating, in which establishment he was eating and what city was he in when got arrested. 
+Flag format :  CyberX{foodname_establishment_city}
+Example : CyberX{nasilemak_pizzahut_skudai}
+
+Mario brother? Luigi... when he got arrested m8? Well let's just search Google. Got this [website](https://edition.cnn.com/2024/12/11/us/luigi-mangione-unitedhealthcare-arrest-explained/index.html)
+
+FLAG: CyberX{hashbrown_mcdonald's_altoona}
 ### 2. Rat in the kitchen 2
+
+Description: Mamma mia, it seems like he was snitched by a employee. Now figure out the alleged snitch. 
+Flag format: CyberX{name}
+Example: CyberX{mark_zuckerberg}
+
+Well another google search ig... Damn this is boring... 
+
+![Step1](images/mario.png)
+
+Lol first result.
+
+FLAG: CyberX{nancy_parker}
 ### 3. Outing With Persaka UTM 1
+
+![chall](images/chall1.jpg)
+
+Description: I wonder where this place is?? Flag Format: CyberX{KLCC}
+
+Mate are you showing us the trash dump or satelite kinda thing, anyways there are two ways to solve this, image search (you gonna cry) or stalk Persaka UTM since this is their event. If you choose the former, do tell me how you get, if you use latter, just go to their facebook or insta and stalk them to death. 
+
+![chall](images/persaka.png)
+
+Got this from FB. Since they format used the abbreviation let's try CCoE like what said in the picture and not CCOE
+
+FLAG: CyberX{CCoE}
+
 ### 4. Outing With Persaka UTM 2
+
+![chall](images/chall2.jpg)
+
+Desription: After going to the place in the first part, i almost got lost in this jungle in mid of town. Flag format: CyberX{midvalleysouthkey}
+
+Well this can use reverse image I think. But that also no need la bro. Just look at the picture, got ```ORION CLINIC```, search that and you will get the place, Tamarind Square.
+
+FLAG: CyberX{tamarindsquare}
 ### 5. Outing With Persaka UTM 3
+
+![chall](images/chall3.jpg)
+
+Description: Damn even the toilet in this building is nice, Flag Format: CyberX{Kfc}, only need company name
+
+Nice toilet no cap, got the answer before from the FB post, that must be Dell since they only went to 2 places.
+
+FLAG: CyberX{Dell}
 
 ## Misc
 ### 1. Lucy Relative, Alice
 
-That is all the challenges from me. 
+Description: You know lucy right? From the movie... it seems like her relative Alice is currently in a pc belonging to CyberX. You need to figure out what she is doing inside the pc!
+
+Hmmm a video with flickering screens... it might be morse code, but she is inside a pc so maybe the language of computers, binary? Well it is binary and here is the script I used to get the binary.
+
+```python 
+import cv2
+import numpy as np
+from collections import defaultdict
+
+def select_roi(frame):
+    """
+    Allow user to select the ROI using a GUI
+    """
+    print("Select the monitor screen region:")
+    print("1. Click and drag to select the area")
+    print("2. Press ENTER to confirm selection")
+    print("3. Press 'c' to cancel and reselect")
+    
+    roi = cv2.selectROI("Select Monitor Region", frame, fromCenter=False, showCrosshair=True)
+    cv2.destroyWindow("Select Monitor Region")
+    
+    return roi
+
+def analyze_monitor_state(video_path):
+    """
+    Analyze video frames by second to detect monitor screen state (white=1, black=0)
+    Including zero second
+    """
+    cap = cv2.VideoCapture(video_path)
+    
+    fps = int(cap.get(cv2.CAP_PROP_FPS))
+    print(f"Video FPS: {fps}")
+    
+    ret, first_frame = cap.read()
+    if not ret:
+        print("Error reading video")
+        return {}
+    
+    roi = select_roi(first_frame)
+    x, y, w, h = map(int, roi)
+    
+    # Analyze first frame separately for zero second
+    roi_area = first_frame[y:y+h, x:x+w]
+    gray = cv2.cvtColor(roi_area, cv2.COLOR_BGR2GRAY)
+    avg_brightness = np.mean(gray)
+    initial_state = 1 if avg_brightness > 128 else 0
+    
+    # Initialize states with zero second
+    states_by_second = defaultdict(list)
+    states_by_second[0].append(initial_state)
+    
+    # Reset to start of video
+    cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+    
+    frame_count = 0
+    
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+            
+        # Calculate current second
+        current_second = int(frame_count / fps)
+        
+        # Extract and analyze ROI
+        roi_area = frame[y:y+h, x:x+w]
+        gray = cv2.cvtColor(roi_area, cv2.COLOR_BGR2GRAY)
+        avg_brightness = np.mean(gray)
+        state = 1 if avg_brightness > 128 else 0
+        
+        states_by_second[current_second].append(state)
+        
+        # Display the frame with ROI rectangle and info
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.putText(frame, f"Second: {current_second}", (x, y-70),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+        cv2.putText(frame, f"State: {state}", (x, y-40),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+        cv2.putText(frame, f"Brightness: {avg_brightness:.1f}", (x, y-10),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+        
+        cv2.imshow('Analysis', frame)
+        
+        frame_count += 1
+        
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    
+    cap.release()
+    cv2.destroyAllWindows()
+    
+    # Process results by second
+    final_states = {}
+    for second, states in states_by_second.items():
+        average_state = sum(states) / len(states)
+        final_states[second] = 1 if average_state > 0.5 else 0
+    
+    return final_states
+
+def save_binary_sequence(states, output_file):
+    """
+    Save binary sequence to a text file, ensuring zero second is included
+    """
+    max_second = max(states.keys())
+    # Ensure we start from second 0
+    binary_sequence = ''.join(str(states.get(i, 0)) for i in range(max_second + 1))
+    
+    with open(output_file, 'w') as f:
+        f.write(binary_sequence)
+    
+    print(f"Binary sequence saved to {output_file}")
+    print(f"Binary sequence: {binary_sequence}")
+
+def main():
+    video_path = 'path to the video'
+    output_file = 'binary_sequence.txt'
+    
+    states_by_second = analyze_monitor_state(video_path)
+    
+    # Save to file
+    save_binary_sequence(states_by_second, output_file)
+    
+    # Print summary
+    total_seconds = len(states_by_second)
+    white_seconds = sum(1 for state in states_by_second.values() if state == 1)
+    black_seconds = total_seconds - white_seconds
+    
+    print(f"\nSummary:")
+    print(f"Total seconds analyzed: {total_seconds}")
+    print(f"Seconds with white screen: {white_seconds}")
+    print(f"Seconds with black screen: {black_seconds}")
+    print(f"White screen percentage: {(white_seconds/total_seconds)*100:.1f}%")
+
+if __name__ == "__main__":
+    main()
+```
+
+Run this python code in your kali, remember to set the path to the video. 
+
+![Step1](images/al1.png)
+
+Then don't forget to choose the screen and press enter.
+
+![Step2](images/al2.png)
+
+Voila, you will get this after the analysis is done
+
+![Step3](images/al3.png)
+
+```binary
+010000110111100101100010011001010111001001011000011110110100001000110001011011100011010001110010011110010101111100110001011100110101111101100110011101010110111001111101
+```
+
+Go to [dcode](https://dcode.fr/en) or [cybcerchef](https://gchq.github.io/CyberChef/) and decode this, I prefer cyberchef, since we know that this is binary.
+
+![Step3](images/al4.png)
+
+
+That is all the challenges from me. See you guys again 🎊🎊🎊🎊
 

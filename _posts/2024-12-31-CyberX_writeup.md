@@ -340,7 +340,7 @@ Ming
 
  ```
 
-So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all.  
+So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all. So 
 
 ### 7. Hex1: The Misleading File
 ### 8. Hex2: The Hidden Code

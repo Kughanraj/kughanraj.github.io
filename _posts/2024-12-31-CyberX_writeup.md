@@ -22,7 +22,11 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
    The hardest part of this challenge is getting the .E01 file. After downloading the file, open FTK imager, navigate to File, press add evidence item and choose the image file option.
    
- 
+  ![Step1](images/1.1.png)
+
+   Then press on the file until you enter the root folder. The scroll until the end and you will see the welcome.txt with the flag for this challenge.
+
+   ![Step2](images/1.2.png)
 
    FLAG = CyberX{l3mm3_gu3ss_FTK?}
 

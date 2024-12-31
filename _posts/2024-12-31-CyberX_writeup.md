@@ -22,11 +22,11 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
    The hardest part of this challenge is getting the .E01 file. After downloading the file, open FTK imager, navigate to File, press add evidence item and choose the image file option.
    
-  ![Step1](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/step1_odyssey.png)
+  ![Step1]()
 
    Then press on the file until you enter the root folder. The scroll until the end and you will see the welcome.txt with the flag for this challenge.
 
-   ![Step2](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/Screenshot%202024-12-31%20140730.png)
+   ![Step2]()
 
    FLAG = CyberX{l3mm3_gu3ss_FTK?}
 
@@ -43,26 +43,26 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    Under Users only 1 user seems legit, which is plssk, so start analyze his files.
    Under his downloads folder, there is a weird folder name hidden, open the folder and voila we could see the flag2.txt.
 
-   ![Step1](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/2_1.png)
+   ![Step1](images/2_1.png)
    
    Upon opening the file, we are welcomed by a "Where is the flag???". So like any other sane person we should just search for it in other place right? ❌❌❌
    Next time when you receive a file like this, with nothing shown try "CTRL+A" to select all the thing in the file and see if there are anything else or is it really empty. 
 
    Now if you do "CTRL+A" to this file, you will see something like this.
 
-   ![Step2](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/2_2.png)
+   ![Step2](images/2_2.png)
 
    Now we know that there is something there, upload it into [dcode](https://dcode.fr/en). One of the most important tool for decryption alongside [cybcerchef](https://gchq.github.io/CyberChef/)
 
    Now copy the invisible characters from the file with "CTRL+A" + "CTRL+C" and paste it into dcode. After a bit of loading, there will be this ```Need to decrypt a message? Try our cipher identifier!``` sentence, press the cipher identifier and paste back the copied stuff into the ```ciphertext to recognize```. 
 
 
-   ![Step3](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/2_3.png)
+   ![Step3](images/2_3.png)
 
    Now press analyze and you will see the Results showing a lot of hits for the WhiteSpace Language. 
    Press the WhiteSpace Language and paste it back and and press decrpyt. Voila you will get the flag. 
 
-   ![Step4](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/2_4.png)
+   ![Step4](images/2_4.png)
 
    FLAG = CyberX{y0u_c4n_r34d_th1s?} 
 
@@ -71,7 +71,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
    Hint for this challenge is the words ```gap in the story```. So most probably the hacker deleted the file. Just go to Recylce Bin in FTK imager and get the flag. 
 
-   ![Step1](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/3_1.png)
+   ![Step1](images/3_1.png)
 
    FLAG = CyberX{g3tt1ng_th3_g1st_0f_1t?}
 
@@ -85,15 +85,15 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
    Welp for the intended way, you need to analyze the picture folder, since that is what been told in the description. 
 
-   ![Step1](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/4.1.png)
+   ![Step1](images/4.1.png)
 
    Here we can see alot of images, so just extract the images by right clicking it and press export files. Then go to your kali or use online exiftool and analyze the image. In the giraffe image, I placed a comment that saying "The final flag is hidden in the folder: program files/deep_hidden/secrets".
 
-   ![Step2](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/4.2.png)
+   ![Step2](images/4.2.png)
 
    So just go there and get the flag.
 
-   ![Step3](https://github.com/Kughanraj/images/blob/main/CyberX%20CTF/4.3.png)
+   ![Step3](images/4.3.png)
 
    Over here the flag is in some kind of encrypted form (base64), just go to [dcode](https://dcode.fr/en) and repeat the same process and get the flag. 
 

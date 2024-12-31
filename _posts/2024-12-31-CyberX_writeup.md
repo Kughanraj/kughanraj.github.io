@@ -146,6 +146,202 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
   FLAG : CyberX{J0hn_th3_g04t}
 
 ### 6. ZipCrack 2: The Champion Lock
+ Description: Another ZIP file blocks your path, but this one carries a hint. The hacker’s obsession with League of Legends may have influenced the password. Look closely—perhaps the password is tied to something familiar to any LoL player.
+
+ Alright this also seems like the same password protected zip file, but this time something is different. **password is tied to something familiar to any LoL player**, this could mean a lot of things like maybe the proffession players or even the character names. Welp we can just do the same steps as above and get the password right?? Welp maybe, I didn't try it 💀. 
+ So what to do now? We can't be thinking of bruteforcing 80+ characters and god know how many proffesional players name right? right??
+
+ Take a deep breath and analyze back how John works, he crack/guess the password hash with a list of hash he already has. So how about if we give him a custom word list to crack?? Well that is the intended way to solve this chall, but writing all the character and player name on your own is hard, if you even think of writing it better just test it with the zip file right? So we turn to our best friend, CHATGPT 🐐. We ask him to create a wordlist for us. 
+
+ ```txt
+ Aatrox
+Ahri
+Akali
+Akshan
+Alistar
+Amumu
+Anivia
+Annie
+Aphelios
+Ashe
+Aurelion Sol
+Azir
+Bard
+Bel'Veth
+Blitzcrank
+Brand
+Braum
+Caitlyn
+Camille
+Cassiopeia
+Cho'Gath
+Corki
+Darius
+Diana
+Dr. Mundo
+Draven
+Ekko
+Elise
+Evelynn
+Ezreal
+Fiddlesticks
+Fiora
+Fizz
+Galio
+Gangplank
+Garen
+Gnar
+Gragas
+Graves
+Gwen
+Hecarim
+Heimerdinger
+Illaoi
+Irelia
+Ivern
+Janna
+Jarvan IV
+Jax
+Jayce
+Jhin
+Jinx
+Kai'Sa
+Kalista
+Karma
+Karthus
+Kassadin
+Katarina
+Kayle
+Kayn
+Kennen
+Kha'Zix
+Kindred
+Kled
+Kog'Maw
+KSante
+LeBlanc
+Lee Sin
+Leona
+Lillia
+Lissandra
+Lucian
+Lulu
+Lux
+Malphite
+Malzahar
+Maokai
+Master Yi
+Milio
+Miss Fortune
+Mordekaiser
+Morgana
+Naafiri
+Nami
+Nasus
+Nautilus
+Neeko
+Nidalee
+Nilah
+Nocturne
+Nunu & Willump
+Olaf
+Orianna
+Ornn
+Pantheon
+Poppy
+Pyke
+Qiyana
+Quinn
+Rakan
+Rammus
+Rek'Sai
+Rell
+Renata Glasc
+Renekton
+Rengar
+Riven
+Rumble
+Ryze
+Samira
+Sejuani
+Senna
+Seraphine
+Sett
+Shaco
+Shen
+Shyvana
+Singed
+Sion
+Sivir
+Skarner
+Sona
+Soraka
+Swain
+Sylas
+Syndra
+Tahm Kench
+Taliyah
+Talon
+Taric
+Teemo
+Thresh
+Tristana
+Trundle
+Tryndamere
+Twisted Fate
+Twitch
+Udyr
+Urgot
+Varus
+Vayne
+Veigar
+Vel'Koz
+Vex
+Vi
+Viego
+Viktor
+Vladimir
+Volibear
+Warwick
+Wukong
+Xayah
+Xerath
+Xin Zhao
+Yasuo
+Yone
+Yorick
+Yuumi
+Zac
+Zed
+Zeri
+Ziggs
+Zilean
+Zoe
+Zyra
+K'Sante
+Milio
+Naafiri
+Briar
+Faker
+Caps
+Chovy
+Nuguri
+TheShy
+Zeus
+Canyon
+Jankos
+Peanut
+Uzi
+Gumayusi
+Ruler
+Mata
+Keria
+Ming
+
+ ```
+
+So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all.  
+
 ### 7. Hex1: The Misleading File
 ### 8. Hex2: The Hidden Code
 ### 9.  Hex3: The Deceiver’s Trick

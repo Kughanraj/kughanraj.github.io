@@ -136,11 +136,11 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
   Now use 7z to extract the zip and use the password when prompted.
 
-  ![Step1]()
+  ![Step1](images/zip1.1.png)
 
   Then cd into the folder and cat the flag.
 
-  ![Step2]()
+  ![Step2](images/zip1.2.png)
 
   FLAG : CyberX{J0hn_th3_g04t}
 

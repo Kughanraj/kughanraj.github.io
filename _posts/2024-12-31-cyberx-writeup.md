@@ -658,6 +658,7 @@ Go to [dcode](https://dcode.fr/en) or [cybcerchef](https://gchq.github.io/CyberC
 
 ![Step3](images/al4.png)
 
+FLAG: CyberX{B1n4ry_1s_fun}
 
 That is all the challenges from me. See you guys again 🎊🎊🎊🎊
 

@@ -1,8 +1,7 @@
 ---
-title: CyberX CyberSentinel Writeup By PLLSKY
-date: 2024-12-31 00:00:00 +0800
-categories: [CTF, Writeup, CyberX]
-tags: [ctf, writeup, cyberx, cybersentinels]
+layout: post
+title: CyberX WSriteup
+date: 2024-12-31 22:53 +0800
 ---
 
 # Welcome to my Challenges Writeup for the CyberX CTF.

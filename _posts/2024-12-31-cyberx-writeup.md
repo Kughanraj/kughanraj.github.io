@@ -538,7 +538,7 @@ Uhmmmm the flag is wrong, this must be a technical issue right?? 🪦🪦🪦 We
 
 The real flag is in the link in the picture but you just need to time travel before infrostealer deleted the blogpost...
 
-For that you need to go to [time_travel_machine](http://web.archive.org/) and paste the website there, a bit guessy but meh. 
+For that you need to go to time_travel_machine -> http://web.archive.org/ (could not post the link since it is not https) and paste the website there, a bit guessy but meh. 
 
 ![Step12](images/apoc12.png)
 

@@ -441,8 +441,107 @@ Ohh we have a comment in the metadata, so that is the string said in the questio
 
 FLAG: CyberX{XJVTQR_PAKZLW_NMTRXF_ZGYCWD}
 ### 12. Apocalypse
-Too lazy to do writeup.....
-    
+![chall](images/c1.1.png)
+
+Description: Notorious hacker CyberSteal6969 has struck again, this time targeting CyberX, stealing a highly confidential flag. Our team managed to seize his personal computer, but the system was wiped clean, except for a single, suspicious image left behind.
+
+Reports suggest CyberSteal may have been communicating with his counterpart using morse code from video. But leave no stone unturned. Can you uncover the secrets within and retrieve the stolen flag?
+
+Hmmm looks like a cropped image, but let's exiftool this picture and see what it has.
+
+![Step1](images/apoc1.png)
+
+Hmmmm, **[minor] Trailer data after PNG IEND chunk**, this could mean that there is a another photo behind the photo or the photo is corrupted. Well you can use [binwalk](https://github.com/ReFirmLabs/binwalk) to extract data or use [pngcheck](http://www.libpng.org/pub/png/apps/pngcheck.html) to analyze more.. I am a bit lazy for that, so I just searched ```iend after iend in png``` (got this info when I opened the picture in hex editor and also from the warning in exiftool).
+
+![Step2](images/apoc2.png)
+
+And something caught my eye at the end of the google search. 
+
+```aCropalypse - Why worry?```, sounds similar to the challenge name right?? Bcuz that is the hint. So read [here](https://www.da.vidbuchanan.co.uk/blog/exploiting-acropalypse.html) for more info. 
+
+I just downloaded this [tool](https://github.com/frankthetank-music/Acropalypse-Multi-Tool) and set it up in my kali. 
+
+![Step3](images/apoc3.png)
+
+Got this weird ui and I just picked the ```restoring tool``` option.
+
+![Step4](images/apoc4.png)
+
+Select the picture with ```Windows 11 Snipping Tool``` option. And let the guy do his job. 
+
+![Step5](images/apoc5.png)  
+
+Looks like the user credential for CyberSteal6969's flickr account. Maybe this is where he communicate with his counterpart. Hopefully we can find the morse code video and get done with this challenge. 
+
+![Step6](images/apoc6.png)
+
+Sweet we got two videos in his camera roll, let's download the video and decode it. 
+
+I used this [morsecode.world](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) for the decoding and looks like it only supports .wav file so don't forget to change the **extension**!!
+
+Aaaaand we got jebaited.. 
+
+```bash
+video 1 : G 0 0 D J 0 B G 3 T T 1 N G H 3 R 3 
+```
+
+Both video has the same string in it. Maybe we need to search for other videos..
+
+That is when I remembered that CyberSteal has a accomplice right? Maybe we can get the accomplice from here. 
+
+![Step7](images/apoc7.png)
+
+And then I saw the notification saying infostealer6969 tagged you in a video!!!! So we got the accomplice, let's try and see his account now since cybersteal account got nothing more. 
+
+![Step8](images/apoc8.png)
+
+Nice, a video named flag, this must be the flag right????? Download the video and try the decoder again. Annnnnddddd
+
+
+```bash
+G 0 0 D J 0 B G 3 T T 1 N G H 3 R 3
+```
+
+Not this thing again!!! But swear to god I had different morse code but meh nevermind, the flag is not in morse code either way. If you read the description, I had said **But leave no stone unturned** so just analyze the other things in the infostealer account which is his pictures and if you notice something, that is all the pictures that I have used for my challenges. Too lazy to download new pictures bro...
+
+![Step9](images/apoc9.png)
+
+And if you exiftool all the pictures, in the bobcat picture you will find a comment with link
+
+```bash
+https://cyberxstupid.blogspot.com/2024/12/blog-post.html
+```
+
+Now let's open the blogpost and see what is there!!!
+
+![Step10](images/apoc10.png)
+
+💀💀💀You can't be kidding me.....
+
+Well let's see if his blogpost has other posts...
+
+![Step11](images/apoc11.png)
+
+Hell yeah let's gooo!!!!!!!!!
+
+CyberX{c4t_m0us3_g4m3_34sy}
+
+Uhmmmm the flag is wrong, this must be a technical issue right?? 🪦🪦🪦 Well it is not a bug, you guys just got jebaited by a false flag.... Tbh i forgot to delete this post lol, skill issue..
+
+The real flag is in the link in the picture but you just need to time travel before infrostealer deleted the blogpost...
+
+For that you need to go to time_travel_machine(http://web.archive.org/) and paste the website there, a bit guessy but meh. 
+
+![Step12](images/apoc12.png)
+
+Here you can see that the website is saved one time, so open it up (press on the date) and voila you got the flag.
+
+![Step13](images/apoc13.png)
+
+FLAG: CyberX{c4t_m0us3_pl4y_m4d3_34s13r}
+
+Just one word extra from the false flag.. Welp we learn something right?? 
+
 ## OSINT
 ### 1. Rat in the kitchen 1
 Description: Rats in the kitchen - it seems like mario brother was arrested while he was eating. What was he eating, in which establishment he was eating and what city was he in when got arrested. 
@@ -661,4 +760,5 @@ Go to [dcode](https://dcode.fr/en) or [cybcerchef](https://gchq.github.io/CyberC
 FLAG: CyberX{B1n4ry_1s_fun}
 
 That is all the challenges from me. See you guys again 🎊🎊🎊🎊
-
+## If you guys has any question can ask me in discord @plssky
+Lesson learned: Kughanraj Challenges are shit cause he got skill issue.

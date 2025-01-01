@@ -8,7 +8,10 @@ tags: [ctf,writeup,cyberx,cybersentinels]
 
 # Welcome to my Challenges Writeup for the CyberX CTF.
 
-I know it is a bit late but here is my writeup for the challenges
+I know it is a bit late but here is my writeup **for** the challenges
+
+You can find all the file for the challenges [here](https://github.com/CyberXUTM/CyberX-CTF-2024)
+>I have also put the download links in the challenges, for the challenges with pictures, it is before the challenges description
 
 ## Forensic
 Made quite alot of challenges in this cateogry since this is my **favourite** caterogy. 
@@ -19,7 +22,9 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    Description: 
    The hacker left a taunting message for whoever dared investigate. It’s somewhere on the disk, lying in plain sight. Can you find the first piece of the puzzle?
 
-   So for this challenge, I have given a .E01 file with 7gb size 💀
+   So for this challenge, I have given a .E01 file with 7gb size 💀 
+   [Download](https://drive.google.com/file/d/1Tw4O-JNeZDbg2650BLhHn9cSR3qjI-Xf/view?usp=sharing) 
+   Password: R9xw#VpL3%@z7GbC2^mTJ6XoYqW&4K8*dN!5hUP9LfMv!tR1A?b3k7QZpX&jYC8
 
    The hardest part of this challenge is getting the .E01 file. After downloading the file, open FTK imager, navigate to File, press add evidence item and choose the image file option.
    
@@ -101,7 +106,9 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    FLAG = CyberX{C0ngr4tul4t10ns_0n_f1nd1ng_m3!}
 
    That is all for the Forensic Odyssey Challenges. 
+
 ### 5. ZipCrack 1: The Hidden Lock
+   [Download](https://drive.google.com/drive/folders/1TV5beVJT5ysvWhHzILmi09fSFPTGMjGS?usp=drive_link)
    Description: A file waits, sealed tight, its contents hidden behind a lock. The key is somewhere, though it’s not obvious. The path to uncover it lies in persistence, and time is ticking. Will you find the way in?
 
    Looks like we got a password protected zip file. **Key is somewhere**,while this could mean many things, the most probable one would be that the key is leaked somewhere like in rockyou.txt (A famous wordlist containing a lot of password). JohnTheRipper would use this wordlist to crack the files. 
@@ -148,6 +155,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
   FLAG : CyberX{J0hn_th3_g04t}
 
 ### 6. ZipCrack 2: The Champion Lock
+[Download](https://drive.google.com/drive/folders/1TV5beVJT5ysvWhHzILmi09fSFPTGMjGS?usp=drive_link)
  Description: Another ZIP file blocks your path, but this one carries a hint. The hacker’s obsession with League of Legends may have influenced the password. Look closely—perhaps the password is tied to something familiar to any LoL player.
 
  Alright this also seems like the same password protected zip file, but this time something is different. **password is tied to something familiar to any LoL player**, this could mean a lot of things like maybe the proffession players or even the character names. Welp we can just do the same steps as above and get the password right?? Welp maybe, I didn't try it 💀. 
@@ -339,7 +347,6 @@ Ruler
 Mata
 Keria
 Ming
-
 ```
 
 So this is the wordlist i got after prompting the 🐐 GPT, so save this as any file name in the same folder with your zip file for ease, otherwise you need to specify the directory and all. Now change the zip file to hash and feed john this juicy wordlist and let him do the work. 
@@ -353,7 +360,7 @@ We could also see that the password is ```tryndamere```. Now just get the flag.
 FLAG: CyberX{pl4se_d0nt_t3ll_m3_y0u_tri3d_th3m_0n3_by_0n3}
 
 ### 7. Hex1: The Misleading File
-
+[Download](https://drive.google.com/drive/folders/11vMfa_fRXtXzZ23ZAT9olQ98SJCC6cw_?usp=drive_link)
 Description: A file has appeared in your path, but something about it doesn't feel right. It’s not what it seems, and the details are hiding in plain sight. Your task: uncover its true identity.
 
 Alright this challenge is pretty straight forward, **uncover its true identity** means just change it's extension. If you open this file in [HexEd](https://hexed.it) or any of your favourite Hex Editor, you will notice that everything looks perfect and let's be forreal, this is forensic, I can't be giving exe file for you to RE right??. You still need to open it in hex editor so that you can get the correct extension which is jpg.
@@ -429,7 +436,7 @@ FLAG: CyberX{34s13st_h3x}
 
 Truly the easiest hex frr!
 ### 11. ChronoPuzzle
-
+[Download](https://drive.google.com/drive/folders/1WvPpXrr44BmFAlywiYuLbymp51tobuqi?usp=drive_link)
 Description: The hacker left behind four identical images, but they don’t look as innocent as they seem. Hidden in their metadata are fragments of a mysterious code. Arrange them in the correct order by deciphering their timestamps.
 flag format = CyberX{string1_string2_string3_string4}
 
@@ -440,8 +447,9 @@ Hmmm 4 cute cat photos named in a order, suspicious.. Well lets try exiftool and
 Ohh we have a comment in the metadata, so that is the string said in the question huh. Alright let's try the strings accroding to the name then ❌❌❌ ofc it is wrong, it cannot be that simple right?? Lets try analysing the metadata more, since that is what we have been asked in the question. Ohhhhh all the files has a bit similar date/time. Wait, the challenge name is Chrono, chrono means **relating to time**, so that is how we should order the strings huh. So cat->cat4->cat2->cat3!!!
 
 FLAG: CyberX{XJVTQR_PAKZLW_NMTRXF_ZGYCWD}
+
 ### 12. Apocalypse
-![chall](images/c1.1.png)
+![chall](images/catch_me_if_you_can.png)
 
 Description: Notorious hacker CyberSteal6969 has struck again, this time targeting CyberX, stealing a highly confidential flag. Our team managed to seize his personal computer, but the system was wiped clean, except for a single, suspicious image left behind.
 
@@ -451,7 +459,7 @@ Hmmm looks like a cropped image, but let's exiftool this picture and see what it
 
 ![Step1](images/apoc1.png)
 
-Hmmmm, **[minor] Trailer data after PNG IEND chunk**, this could mean that there is a another photo behind the photo or the photo is corrupted. Well you can use [binwalk](https://github.com/ReFirmLabs/binwalk) to extract data or use [pngcheck](http://www.libpng.org/pub/png/apps/pngcheck.html) to analyze more.. I am a bit lazy for that, so I just searched ```iend after iend in png``` (got this info when I opened the picture in hex editor and also from the warning in exiftool).
+Hmmmm, **[minor] Trailer data after PNG IEND chunk**, this could mean that there is a another photo behind the photo or the photo is corrupted. Well you can use [binwalk](https://github.com/ReFirmLabs/binwalk) to extract data or use [pngchecker](https://wiki.bi0s.in/steganography/pngcheck/) to analyze more.. I am a bit lazy for that, so I just searched ```iend after iend in png``` (got this info when I opened the picture in hex editor and also from the warning in exiftool).
 
 ![Step2](images/apoc2.png)
 

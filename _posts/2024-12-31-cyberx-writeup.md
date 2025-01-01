@@ -405,7 +405,7 @@ Voila we got the flag.
 
 ![Step1](images/hex3.png)
 
-FLAG:CyberX{34s13st_h3x}
+FLAG: CyberX{H3x_4ever}
 
 ### 10. Hex4: The Final Fix
 

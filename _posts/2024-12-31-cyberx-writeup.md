@@ -22,9 +22,10 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    Description: 
    The hacker left a taunting message for whoever dared investigate. It’s somewhere on the disk, lying in plain sight. Can you find the first piece of the puzzle?
 
-   So for this challenge, I have given a .E01 file with 7gb size 💀
+   So for this challenge, I have given a .E01 file with 7gb size 💀.
 
    [Download](https://drive.google.com/file/d/1Tw4O-JNeZDbg2650BLhHn9cSR3qjI-Xf/view?usp=sharing) 
+
    Password: R9xw#VpL3%@z7GbC2^mTJ6XoYqW&4K8*dN!5hUP9LfMv!tR1A?b3k7QZpX&jYC8
 
    The hardest part of this challenge is getting the .E01 file. After downloading the file, open FTK imager, navigate to File, press add evidence item and choose the image file option.

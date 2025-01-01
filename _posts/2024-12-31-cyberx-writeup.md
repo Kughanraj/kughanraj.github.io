@@ -608,6 +608,7 @@ FLAG: CyberX{Dell}
 ## Misc
 ### 1. Lucy Relative, Alice
 
+[Download](https://drive.google.com/file/d/1tV8d2M4vU_8wKaLCzDmrtcwNLNuiKm0Z/view?usp=drive_link)
 Description: You know lucy right? From the movie... it seems like her relative Alice is currently in a pc belonging to CyberX. You need to figure out what she is doing inside the pc!
 
 Hmmm a video with flickering screens... it might be morse code, but she is inside a pc so maybe the language of computers, binary? Well it is binary and here is the script I used to get the binary.

@@ -22,7 +22,8 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
    Description: 
    The hacker left a taunting message for whoever dared investigate. It’s somewhere on the disk, lying in plain sight. Can you find the first piece of the puzzle?
 
-   So for this challenge, I have given a .E01 file with 7gb size 💀 
+   So for this challenge, I have given a .E01 file with 7gb size 💀
+
    [Download](https://drive.google.com/file/d/1Tw4O-JNeZDbg2650BLhHn9cSR3qjI-Xf/view?usp=sharing) 
    Password: R9xw#VpL3%@z7GbC2^mTJ6XoYqW&4K8*dN!5hUP9LfMv!tR1A?b3k7QZpX&jYC8
 
@@ -109,6 +110,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
 ### 5. ZipCrack 1: The Hidden Lock
    [Download](https://drive.google.com/drive/folders/1TV5beVJT5ysvWhHzILmi09fSFPTGMjGS?usp=drive_link)
+
    Description: A file waits, sealed tight, its contents hidden behind a lock. The key is somewhere, though it’s not obvious. The path to uncover it lies in persistence, and time is ticking. Will you find the way in?
 
    Looks like we got a password protected zip file. **Key is somewhere**,while this could mean many things, the most probable one would be that the key is leaked somewhere like in rockyou.txt (A famous wordlist containing a lot of password). JohnTheRipper would use this wordlist to crack the files. 
@@ -156,6 +158,7 @@ Made quite alot of challenges in this cateogry since this is my **favourite** ca
 
 ### 6. ZipCrack 2: The Champion Lock
 [Download](https://drive.google.com/drive/folders/1TV5beVJT5ysvWhHzILmi09fSFPTGMjGS?usp=drive_link)
+
  Description: Another ZIP file blocks your path, but this one carries a hint. The hacker’s obsession with League of Legends may have influenced the password. Look closely—perhaps the password is tied to something familiar to any LoL player.
 
  Alright this also seems like the same password protected zip file, but this time something is different. **password is tied to something familiar to any LoL player**, this could mean a lot of things like maybe the proffession players or even the character names. Welp we can just do the same steps as above and get the password right?? Welp maybe, I didn't try it 💀. 
@@ -360,7 +363,9 @@ We could also see that the password is ```tryndamere```. Now just get the flag.
 FLAG: CyberX{pl4se_d0nt_t3ll_m3_y0u_tri3d_th3m_0n3_by_0n3}
 
 ### 7. Hex1: The Misleading File
+
 [Download](https://drive.google.com/drive/folders/11vMfa_fRXtXzZ23ZAT9olQ98SJCC6cw_?usp=drive_link)
+
 Description: A file has appeared in your path, but something about it doesn't feel right. It’s not what it seems, and the details are hiding in plain sight. Your task: uncover its true identity.
 
 Alright this challenge is pretty straight forward, **uncover its true identity** means just change it's extension. If you open this file in [HexEd](https://hexed.it) or any of your favourite Hex Editor, you will notice that everything looks perfect and let's be forreal, this is forensic, I can't be giving exe file for you to RE right??. You still need to open it in hex editor so that you can get the correct extension which is jpg.
@@ -436,7 +441,9 @@ FLAG: CyberX{34s13st_h3x}
 
 Truly the easiest hex frr!
 ### 11. ChronoPuzzle
+
 [Download](https://drive.google.com/drive/folders/1WvPpXrr44BmFAlywiYuLbymp51tobuqi?usp=drive_link)
+
 Description: The hacker left behind four identical images, but they don’t look as innocent as they seem. Hidden in their metadata are fragments of a mysterious code. Arrange them in the correct order by deciphering their timestamps.
 flag format = CyberX{string1_string2_string3_string4}
 
@@ -608,7 +615,8 @@ FLAG: CyberX{Dell}
 ## Misc
 ### 1. Lucy Relative, Alice
 
-[Download](https://drive.google.com/file/d/1tV8d2M4vU_8wKaLCzDmrtcwNLNuiKm0Z/view?usp=drive_link)
+[Download](https://drive.google.com/file/d/1tV8d2M4vU_8wKaLCzDmrtcwNLNuiKm0Z/view?usp=sharing)
+
 Description: You know lucy right? From the movie... it seems like her relative Alice is currently in a pc belonging to CyberX. You need to figure out what she is doing inside the pc!
 
 Hmmm a video with flickering screens... it might be morse code, but she is inside a pc so maybe the language of computers, binary? Well it is binary and here is the script I used to get the binary.

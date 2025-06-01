@@ -21,27 +21,27 @@ This time only 3 forensic(??) challenges from me and all of them are Hex Editing
 
   [Download](https://drive.google.com/file/d/1fSLItXWjdlM5fBKAa-n2nmQwA7fB0CPA/view?usp=drive_link) in case you want to try the chall..
 
-  ![Step1]()
+  ![Step1](images/1.1.png)
 
   Open the file in Hexed or IMHex or any Hex Editor of your preference, i just use [CyberChef](https://gchq.github.io/CyberChef/) 
 
   You can enter the file as input in CyberChef 
 
-  ![step2]()
+  ![step2](images/1.1.png)
 
   Here we can see that the magic bytes are messed up, I mean no jpg starts with ```aa aa aa aa```, they start with ```FF D8 FF E0``` 
 
   So change it and we can also try to render the picture in CyberChef (I love you!!) Just use ```From Hex``` and ```Render Image``` recipes. 
 
-  ![Step3]()
+  ![Step3](images/1.1.png)
 
   This is the picure we get, however there is no flag visible here... If you look hard enough you can see that the picture is not full. I just changed the hex that controls the height.. you can ask chatgpt to explain more about this part.. but normally jpg height hex is stated after ``` FF C0``` however this jpg does not have any of that but chatgpt also said that ``` FF C1 ``` ```FF C2``` are used sometimes and to our luck there exists ```FF C2``` in our jpg.
 
-  ![Step4]()
+  ![Step4](images/1.1.png)
 
   So just play around the bytes and we can see that if we change the ``04`` TO ``05`` we can see the flag.
 
-  ![step5]()
+  ![step5](images/1.1.png)
 
   FLAG: CyberX{34SY_R1GHT?}
 
@@ -59,7 +59,7 @@ This time only 3 forensic(??) challenges from me and all of them are Hex Editing
 
   This is how the picture looks after fixing the magic byte and height!
 
-  ![Step1]()
+  ![Step1](images/1.1.png)
   
   ```python
   # File paths
@@ -89,7 +89,7 @@ print(f'Removed all exact "hisyam" and trap payloads "hhisyamisyam". Cleaned fil
 
 So after cleaning this, you will get this cleaned.jpg
 
-![Step2]()
+![Step2](images/1.1.png)
 
 FLAG: CyberX{YoU_F1X3D_M3!}
 
